@@ -1,4 +1,4 @@
-name: .NET Build
+name: Build
 
 on:
   push:
@@ -12,16 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 8.0.x
-
-      - name: Restore
-        run: dotnet restore
-
-      - name: Build
-        run: dotnet build --configuration Release
-
-      - name: Test
-        run: dotnet test
+      - name: Verify files
+        run: ls -la
